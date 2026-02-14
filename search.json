@@ -1,0 +1,14 @@
+---
+layout: none
+---
+[
+  {% for game in site.games %}
+    {
+      "title"    : "{{ game.title | escape }}",
+      "category" : "{{ game.category | escape }}",
+      "url"      : "{{ game.url | relative_url }}",
+      "thumbnail": "{{ game.thumbnail }}",
+      "content"  : "{{ game.content | strip_html | strip_newlines | escape }}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

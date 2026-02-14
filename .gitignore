@@ -1,0 +1,7 @@
+vendor/
+.jekyll-cache/
+_site/
+.sass-cache/
+node_modules/
+package-lock.json
+Gemfile.lock

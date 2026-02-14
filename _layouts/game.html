@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div class="max-w-5xl mx-auto">
+    <div class="bg-black rounded-2xl overflow-hidden shadow-2xl mb-8 aspect-video relative group">
+        <iframe src="{{ page.iframe_url }}" class="absolute inset-0 w-full h-full border-0" allowfullscreen></iframe>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+            <h1 class="text-3xl font-bold mb-4">{{ page.title }}</h1>
+            <div class="bg-white p-6 rounded-2xl shadow-sm mb-8">
+                <h2 class="text-xl font-semibold mb-3">About the game</h2>
+                <div class="text-gray-600 leading-relaxed">
+                    {{ content }}
+                    <p>{{ page.description }}</p>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-gray-100 rounded-full text-sm font-medium text-gray-600">#{{ page.category }}</span>
+                    <span class="px-3 py-1 bg-gray-100 rounded-full text-sm font-medium text-gray-600">#HTML5</span>
+                </div>
+            </div>
+        </div>
+        <div class="space-y-6">
+            <h2 class="text-xl font-bold">Related Games</h2>
+            <div class="grid grid-cols-1 gap-4">
+                {% assign related_games = site.games | where_exp: "item", "item.url != page.url" | sample: 3 %}
+                {% for game in related_games %}
+                    {% include game-card.html game=game %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
