@@ -1,0 +1,29 @@
+title: Free Online Games
+description: A responsive game portal inspired by Poki.
+baseurl: ""
+url: ""
+
+collections:
+  games:
+    output: true
+    permalink: /game/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "games"
+    values:
+      layout: "game"
+
+markdown: kramdown
+highlighter: rouge
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - tailwind.config.js
+  - package.json
+  - package-lock.json
+  - rebuild.sh
+  - test.txt

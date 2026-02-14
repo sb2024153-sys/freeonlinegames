@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .game-card {
+    @apply bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer;
+  }
+  .btn-primary {
+    @apply bg-electric-blue text-white font-bold py-2 px-4 rounded-full hover:bg-opacity-90 transition-colors;
+  }
+  .category-btn {
+    @apply px-4 py-2 rounded-full bg-white text-gray-700 font-medium hover:bg-candy-green hover:text-white transition-all shadow-sm;
+  }
+  .category-btn.active {
+    @apply bg-candy-green text-white;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

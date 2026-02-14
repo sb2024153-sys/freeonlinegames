@@ -1,0 +1,15 @@
+<div class="game-item" data-category="{{ include.game.category }}">
+    <a href="{{ include.game.url | relative_url }}" class="game-card block group">
+        <div class="relative pt-[100%]">
+            <img src="{{ include.game.thumbnail }}" alt="{{ include.game.title }}"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                <span class="text-white font-bold text-sm">{{ include.game.title }}</span>
+            </div>
+        </div>
+        <div class="p-3">
+            <h3 class="font-bold text-sm truncate group-hover:text-electric-blue transition-colors">{{ include.game.title }}</h3>
+            <p class="text-xs text-gray-400 mt-1">{{ include.game.category }}</p>
+        </div>
+    </a>
+</div>
